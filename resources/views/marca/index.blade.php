@@ -18,6 +18,8 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Nascimento da Marca</th>
                     <th scope="col">Nacionalidade</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Deletar</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -26,6 +28,14 @@
                     <td>{{ $marca->name }}</td>
                     <td>{{ $marca->nascimento }}</td>
                     <td>{{ $marca->nacionalidade }}</td>
+                    <td><a href="{{$marca->id}}/edit" class="btn btn-info">Editar</a></td>
+                    <td>
+                        <form action="delete/{{ $marca->id }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-danger">Deletar</button>
+                        </form>
+                    </td>
                 </tr>
     @endforeach
                 </tbody>

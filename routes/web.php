@@ -32,6 +32,8 @@ Route::get('marca/index', 'App\Http\Controllers\MarcaController@index');
 Route::get('marca/create', 'App\Http\Controllers\MarcaController@create');
 Route::post('marca/save', 'App\Http\Controllers\MarcaController@save');
 Route::get('marca/{id}/edit', 'App\Http\Controllers\MarcaController@edit');
+Route::post('marca/update/{id}', 'App\Http\Controllers\MarcaController@update');
+Route::delete('marca/delete/{id}', 'App\Http\Controllers\MarcaController@delete');
 
 //rotas de fabricacao
 Route::get('fabricacao/index', 'App\Http\Controllers\FabricacaoController@index');
