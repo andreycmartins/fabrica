@@ -25,16 +25,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link btn btn-primary m-1" type="button" href="{{URL::to('dashboard')}}">Dashboard</a>
+                <a class="nav-link btn btn-primary m-1" type="button" href="{{url('dashboard/index')}}">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-success m-1" type="button" href="{{URL::to('cadastro-marca')}}">Cadastro de Marca</a>
+                <a class="nav-link btn btn-success m-1" type="button" href="{{url('marca/index')}}">Cadastro de Marca</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-danger m-1" type="button" href="{{URL::to('fabricacao-automovel')}}">Fabricação de Automóvel</a>
+                <a class="nav-link btn btn-danger m-1" type="button" href="{{url('fabricacao/create')}}">Fabricação de Automóvel</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-warning m-1" type="button" href="{{URL::to('automoveis-fabricados')}}">Automóveis Fabricados</a>
+                <a class="nav-link btn btn-warning m-1" type="button" href="{{url('fabricacao/index')}}">Automóveis Fabricados</a>
             </li>
         </ul>
     </div>

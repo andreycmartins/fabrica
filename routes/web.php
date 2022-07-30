@@ -21,10 +21,18 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login');
 });
-
+//rotas de index
 Route::get('index', 'App\Http\Controllers\IndexController@index');
-Route::get('dashboard', 'App\Http\Controllers\DashboardController@index');
-Route::get('cadastro-marca', 'App\Http\Controllers\CadastroMarcaController@index');
-Route::get('cadastro-marca-form', 'App\Http\Controllers\CadastroMarcaController@create');
-Route::get('fabricacao-automovel', 'App\Http\Controllers\FabricacaoAutomovelController@index');
-Route::get('automoveis-fabricados', 'App\Http\Controllers\AutomoveisFabricadosController@index');
+
+//rodas de dashboard
+Route::get('dashboard/index', 'App\Http\Controllers\DashboardController@index');
+
+//rotas de marca
+Route::get('marca/index', 'App\Http\Controllers\MarcaController@index');
+Route::get('marca/create', 'App\Http\Controllers\MarcaController@create');
+Route::post('marca/save', 'App\Http\Controllers\MarcaController@save');
+Route::get('marca/{id}/edit', 'App\Http\Controllers\MarcaController@edit');
+
+//rotas de fabricacao
+Route::get('fabricacao/index', 'App\Http\Controllers\FabricacaoController@index');
+Route::get('fabricacao/create', 'App\Http\Controllers\FabricacaoController@create');
