@@ -2,6 +2,13 @@
 
 @section('titulo','Cadastro de Marca')
 
+@section('head')
+    <!-- Styles -->
+    {{-- <link href="{{ asset('../css/marca/index.css') }}" rel="stylesheet"> --}}
+        <!-- Scripts -->
+        <script src=" {{ asset('js/marca/index.js') }} "></script>
+@endsection
+
 @section('conteudo')
 
     <h1 class="text-center">Cadastro de Marca</h1>
@@ -18,8 +25,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Nascimento da Marca</th>
                     <th scope="col">Nacionalidade</th>
-                    <th scope="col">Editar</th>
-                    <th scope="col">Deletar</th>
+                    <th scope="col">Ações</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -28,19 +34,18 @@
                     <td>{{ $marca->name }}</td>
                     <td>{{ $marca->nascimento }}</td>
                     <td>{{ $marca->nacionalidade }}</td>
-                    <td><a href="{{$marca->id}}/edit" class="btn btn-info">Editar</a></td>
                     <td>
+                        <a href="{{$marca->id}}/edit" class="btn btn-info m-1"><i class="fas fa-edit"></i></a>
                         <form action="delete/{{ $marca->id }}" method="POST">
                             @csrf
                             @method('delete')
-                            <button class="btn btn-danger">Deletar</button>
+                            <button class="btn btn-danger m-1"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         </form>
                     </td>
+                    </i>
                 </tr>
     @endforeach
                 </tbody>
             </table>
         </div>
-
-
 @endsection

@@ -38,3 +38,5 @@ Route::delete('marca/delete/{id}', 'App\Http\Controllers\MarcaController@delete'
 //rotas de fabricacao
 Route::get('fabricacao/index', 'App\Http\Controllers\FabricacaoController@index');
 Route::get('fabricacao/create', 'App\Http\Controllers\FabricacaoController@create');
+Route::post('fabricacao/save', 'App\Http\Controllers\FabricacaoController@save');
+
