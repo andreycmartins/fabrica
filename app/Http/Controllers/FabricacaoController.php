@@ -14,7 +14,9 @@ class FabricacaoController extends Controller
     }
 
     public function create(){
-        return view('fabricacao/form');
+        $marcas = Marca::get();
+
+        return view('fabricacao/form', ['marcas' => $marcas]);
     }
 
     public function save( Request $request ){

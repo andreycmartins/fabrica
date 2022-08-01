@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fabricacao;
 use App\Models\Marca;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class MarcaController extends Controller
         return view('marca.index', ['marcas' => $marcas]);
     }
 
-    public function create(){
+    public function create(Request $request){
         return view ('marca.form');
     }
 

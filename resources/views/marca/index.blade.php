@@ -6,7 +6,7 @@
     <!-- Styles -->
     {{-- <link href="{{ asset('../css/marca/index.css') }}" rel="stylesheet"> --}}
         <!-- Scripts -->
-        <script src=" {{ asset('js/marca/index.js') }} "></script>
+        <script src=" {{ asset('js/marca/marca-index.js') }} "></script>
 @endsection
 
 @section('conteudo')
@@ -34,12 +34,13 @@
                     <td>{{ $marca->name }}</td>
                     <td>{{ $marca->nascimento }}</td>
                     <td>{{ $marca->nacionalidade }}</td>
-                    <td>
-                        <a href="{{$marca->id}}/edit" class="btn btn-info m-1"><i class="fas fa-edit"></i></a>
+                    <td style="display: flex; flex-direction: row;">
+                        <a href="{{$marca->id}}/edit" class="btn btn-info pull-left m-1"><i class="fas fa-edit"></i></a>
+
                         <form action="delete/{{ $marca->id }}" method="POST">
                             @csrf
                             @method('delete')
-                            <button class="btn btn-danger m-1"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            <button submit class="submit btn btn-danger pull-right m-1"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         </form>
                     </td>
                     </i>
