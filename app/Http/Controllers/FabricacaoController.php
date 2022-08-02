@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Redirect;
 class FabricacaoController extends Controller
 {
     public function index(){
-        return view('fabricacao/index');
+        $fabricacao = Fabricacao::get();
+        return view('fabricacao/index', ['fabricacao' => $fabricacao]);
     }
 
     public function create(){
