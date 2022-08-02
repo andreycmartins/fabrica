@@ -8,17 +8,35 @@ $(document).ready(function () {
         "min": 1
     });
 
+
     $("input").prop('required', true);
 
-    $(".selecao_marca").hide();
+    //$(".selecao_marca").hide();
     //$(".selecao_detalhes").hide();
 
-    Swal.fire({
-        icon: 'error',
-        title: 'Vish...',
-        text: 'Preencha todos os campos',
-    });
+    var name = $('.name');
 
-    const isRequired = value => value === '' ? false : true;
+    $form = $("#form-fabricacao");
+
+
+
+    $("#submit").click(function(){
+        if (name.val() == '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Vish...',
+                text: 'Preencha todos os campos',
+            });
+        }
+        else{
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Carro fabricado com sucesso!',
+                showConfirmButton: false,
+                timer: 3000
+            })
+        }
+    });
 
 });

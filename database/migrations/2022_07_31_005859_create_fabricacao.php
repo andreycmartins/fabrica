@@ -11,6 +11,7 @@ class CreateFabricacao extends Migration
      *
      * @return void
      */
+
     public function up()
     {
         Schema::create('fabricacao', function (Blueprint $table) {
@@ -22,6 +23,7 @@ class CreateFabricacao extends Migration
             $table->enum('tipo_motor', ['Aspirado', 'Turbo']);
             $table->enum('tipo_rodas', ['Ferro', 'Liga-Leve']);
             $table->string('cor', 32);
+            $table->string('chassi', 32)->default('teste');
             $table->timestamps();
         });
     }

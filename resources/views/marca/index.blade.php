@@ -32,7 +32,7 @@
     @foreach($marcas as $marca)
                 <tr>
                     <td>{{ $marca->name }}</td>
-                    <td>{{ $marca->nascimento }}</td>
+                    <td>{{ date("d/m/Y", strtotime($marca->nascimento)) }}</td>
                     <td>{{ $marca->nacionalidade }}</td>
                     <td style="display: flex; flex-direction: row;">
                         <a href="{{$marca->id}}/edit" class="btn btn-info pull-left m-1"><i class="fas fa-edit"></i></a>

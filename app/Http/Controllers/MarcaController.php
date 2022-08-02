@@ -7,6 +7,7 @@ use App\Models\Marca;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
 
 class MarcaController extends Controller
 {
@@ -21,8 +22,13 @@ class MarcaController extends Controller
     }
 
     public function save(Request $request){
+        $data = $request;
         $marcas = new Marca;
-        $marcas = $marcas->create( $request->all() );
+        $marcas->name = $data['name'];
+        $marcas->nascimento = $data['nascimento'];
+        $dataNova = $data['nacionalidade'];
+        $marcas->nacionalidade = $dataNova;
+        $marcas->save();
         return Redirect::to('/marca/index');
     }
 

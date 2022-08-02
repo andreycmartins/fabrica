@@ -12,7 +12,7 @@
 @section('conteudo')
     <h1 class="text-center">Fabricação de Automóvel</h1><br><br>
     <h4 class="text-center">Qual marca de automóvel deseja criar?</h4>
-    <form class="d-flex justify-content-center" action="{{ url('fabricacao/save') }}" method="POST">
+    <form class="d-flex justify-content-center" id="form-fabricacao" action="{{ url('fabricacao/save') }}" method="POST">
         @csrf
         <div class="selecao_marca">
         @foreach($marcas as $marca)
@@ -22,7 +22,7 @@
                     <h5 class="card-title text-center">{{ $marca->name }}</h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nascida em: {{$marca->nascimento}}</li>
+                    <li class="list-group-item">Nascida em: {{ date("d/m/Y", strtotime($marca->nascimento)) }}</li>
                     <li class="list-group-item">Nacionalidade: {{$marca->nacionalidade}}</li>
                 </ul><br><br>
                 <div class="card-body">
@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="form-group col-lg-3">
                     <label for="name">Nome do veículo</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Nome">
+                    <input type="text" class="form-control name" name="name" id="name" placeholder="Nome">
                 </div>
                 <div class="form-group col-lg-3">
                     <label for="portas">Quantidade de portas</label>
@@ -90,7 +90,7 @@
                     </select>
                 </div>
             </div>{{--endrow--}}
-            <button type="submit" class="btn btn-primary form-control">Submit</button>
+            <button type="submit" class="btn btn-primary form-control" id="submit" onclick="verificaFormulario()">Submit</button>
         </div>
     </form>
 
