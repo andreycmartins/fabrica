@@ -7,19 +7,29 @@
     <h1 class="text-center">Exibição de Automóvel</h1>
     <div class="container">
         <div class="d-flex justify-content-end">
-            <a type="button" class="btn btn-outline-primary mb-3 " href="{{ url('fabricacao/create') }}">Criar nova marca</a>
+            <a type="button" class="btn btn-outline-primary mb-3 " href="{{ url('fabricacao/create') }}">Fabricar novo carro</a>
         </div>
     </div>
     <div class="container">
-    @foreach($fabricacao as $fabri)
-    <div class="card d-flex justify-content-center" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">{{$fabri->name}}</h5>
-            <p class="card-text">{{$fabri->chassi}}</p>
-            <a href="#" class="btn btn-primary">Visitar</a>
-        </div>
-    </div>
-    @endforeach
+
+            <table class="table table-dark">
+                <thead>
+
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Chassi</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($fabricacao as $fabri)
+                <tr>
+                    <th>{{$fabri->name}}</th>
+                    <td>{{$fabri->chassi}}</td>
+                </tr>
+            @endforeach
+                </tbody>
+            </table>
+
     </div>
 
 @endsection

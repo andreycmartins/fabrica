@@ -11,32 +11,30 @@
 
 @section('conteudo')
     <h1 class="text-center">Fabricação de Automóvel</h1><br><br>
-    <h4 class="text-center">Qual marca de automóvel deseja criar?</h4>
+    <h4 class="text-center">Selecione as características do carro que deseja fabricar</h4>
     <form class="d-flex justify-content-center" id="form-fabricacao" action="{{ url('fabricacao/save') }}" method="POST">
         @csrf
+
         <div class="selecao_marca">
-        @foreach($marcas as $marca)
-        <div class="container d-flex justify-content-center">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title text-center">{{ $marca->name }}</h5>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nascida em: {{ date("d/m/Y", strtotime($marca->nascimento)) }}</li>
-                    <li class="list-group-item">Nacionalidade: {{$marca->nacionalidade}}</li>
-                </ul><br><br>
-                <div class="card-body">
-                    <a href="#" class="btn btn-primary d-flex justify-content-center">Selecionar</a>
-                </div>
+            <div class="row">
+                <div class="form-group" >
+                        <label for="marca">Marca do carro</label><br>
+                        <select class="form-control select2"  type="text" name="marca" id="marca"
+                                placeholder="Marca do carro">
+                @foreach($marcas as $marca)
+                            <option name="selecao_marca2" value="{{$marca->name}}">{{$marca->name}}</option>
+                @endforeach
+                        </select>
+                        <button type="button" class="proxima_pagina btn btn-primary">Proxima página</button>
+                    </div>
             </div>
-        </div>
-        @endforeach
         </div>
 
         {{--
         criação da marca
         --}}
         <div class="container selecao_detalhes">
+            <button type="button" class="pagina_anterior btn btn-primary">Página anterior</button><br><br>
             <div class="row">
                 <div class="form-group col-lg-3">
                     <label for="name">Nome do veículo</label>
@@ -90,7 +88,10 @@
                     </select>
                 </div>
             </div>{{--endrow--}}
-            <button type="submit" class="btn btn-primary form-control" id="submit" onclick="verificaFormulario()">Submit</button>
+            <br><br>
+            <button type="submit" class="btn btn-primary form-control" id="submit" onclick="verificaFormulario()">
+                Confirmar fabricação
+            </button>
         </div>
     </form>
 

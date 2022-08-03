@@ -24,6 +24,7 @@ class CreateFabricacao extends Migration
             $table->enum('tipo_rodas', ['Ferro', 'Liga-Leve']);
             $table->string('cor', 32);
             $table->string('chassi', 32)->default('teste');
+            $table->string('marca', 128);
             $table->timestamps();
         });
     }

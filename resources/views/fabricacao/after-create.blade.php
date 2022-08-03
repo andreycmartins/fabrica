@@ -15,6 +15,7 @@
     <div class="d-flex justify-content-center">
         <ul class="list-group">
             <li class="list-group-item active text-center">Nome: {{$fabricacao->name}}</li>
+            <li class="list-group-item">Marca: {{$fabricacao->marca}}</li>
             <li class="list-group-item">Portas: {{$fabricacao->portas}}</li>
             <li class="list-group-item">Litragem: {{$fabricacao->litragem}}</li>
             <li class="list-group-item">Tipo do veículo: {{$fabricacao->tipo_veiculo}}</li>

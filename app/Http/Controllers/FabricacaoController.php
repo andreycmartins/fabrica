@@ -70,6 +70,7 @@ class FabricacaoController extends Controller
         $fabricacao->tipo_rodas = $data['tipo_rodas'];
         $fabricacao->cor = $data['cor'];
         $fabricacao->chassi = $chassi;
+        $fabricacao->marca = $data['marca'];
         $fabricacao->save();
 
         return view('/fabricacao/after-create', ['fabricacao' => $fabricacao]);

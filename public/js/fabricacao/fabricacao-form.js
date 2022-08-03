@@ -11,14 +11,14 @@ $(document).ready(function () {
 
     $("input").prop('required', true);
 
-    //$(".selecao_marca").hide();
-    //$(".selecao_detalhes").hide();
 
     var name = $('.name');
 
     $form = $("#form-fabricacao");
 
+    $(".selecao_marca").change(function(){
 
+    });
 
     $("#submit").click(function(){
         if (name.val() == '') {
@@ -38,5 +38,19 @@ $(document).ready(function () {
             })
         }
     });
+
+    $(".selecao_detalhes").hide();
+
+    $(".proxima_pagina").click(function(){
+    $(".selecao_marca").hide("slow");
+        $(".selecao_detalhes").show("slow");
+    });
+
+    $(".pagina_anterior").click(function(){
+        $(".selecao_marca").show("slow");
+        $(".selecao_detalhes").hide("slow");
+    });
+
+
 
 });
