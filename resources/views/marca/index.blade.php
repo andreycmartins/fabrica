@@ -17,7 +17,7 @@
         <div class="container col-sm-8">
             <table class="table table-striped table-bordered table-dark">
                 <div class="d-flex justify-content-end">
-                    <a type="button" class="btn btn-outline-primary mb-3 " href="{{ url('marca/create') }}">Criar nova marca</a>
+                    <a type="button" class="btn btn-primary mb-3 " href="{{ url('marca/create') }}">Criar nova marca</a>
                 </div>
 
                 <thead>

@@ -27,10 +27,10 @@
     <title>@yield('titulo')</title>
 </head>
 
-<body>
+<body background="{{ asset('images/background.jpg') }}" style="background-size: 100%; background-position: center; background-repeat: no-repeat;">
 
 <nav class="navbar navbar-expand-lg bg-dark">
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link btn btn-primary m-1" type="button" href="{{url('dashboard/index')}}">Dashboard</a>
@@ -47,7 +47,7 @@
         </ul>
     </div>
 </nav>
-
+<br>
 @yield('conteudo')
 
     <!-- Optional JavaScript -->
