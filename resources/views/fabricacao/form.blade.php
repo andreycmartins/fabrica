@@ -17,12 +17,12 @@
 
         <div class="selecao_marca">
             <div class="row">
-                <div class="form-group" >
-                        <label for="marca">Marca do carro</label><br>
-                        <select class="form-control select2"  type="text" name="marca" id="marca"
+                <div class="form-group display-flex m-3">
+                        <label for="marca">Marca do carro</label>
+                        <select class="form-control select2 "  type="text" name="marca" id="marca"
                                 placeholder="Marca do carro">
                 @foreach($marcas as $marca)
-                            <option name="selecao_marca2" value="{{$marca->name}}">{{$marca->name}}</option>
+                            <option name="selecao_marca2" class="" value="{{$marca->name}}">{{$marca->name}}</option>
                 @endforeach
                         </select>
                         <button type="button" class="proxima_pagina btn btn-primary">Proxima página</button>

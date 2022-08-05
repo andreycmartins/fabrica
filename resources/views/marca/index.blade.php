@@ -11,11 +11,11 @@
 
 @section('conteudo')
 
-    <h1 class="text-center">Cadastro de Marca</h1>
+    <h1 class="text-center" style="color: black;">Cadastro de Marca</h1>
 
 
         <div class="container col-sm-8">
-            <table class="table table-striped table-bordered table-dark">
+            <table class="table table-striped table-bordered table-hover table-dark">
                 <div class="d-flex justify-content-end">
                     <a type="button" class="btn btn-primary mb-3 " href="{{ url('marca/create') }}">Criar nova marca</a>
                 </div>

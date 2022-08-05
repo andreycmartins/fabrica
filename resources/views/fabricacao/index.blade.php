@@ -7,7 +7,7 @@
     <h1 class="text-center">Exibição de Automóvel</h1>
     <div class="container">
         <div class="d-flex justify-content-end">
-            <a type="button" class="btn btn-outline-primary mb-3 " href="{{ url('fabricacao/create') }}">Fabricar novo carro</a>
+            <a type="button" class="btn btn-primary mb-3 " href="{{ url('fabricacao/create') }}">Fabricar novo carro</a>
         </div>
     </div>
     <div class="container">
@@ -17,6 +17,7 @@
 
                 <tr>
                     <th scope="col">Nome</th>
+                    <th scope="col">Marca</th>
                     <th scope="col">Chassi</th>
                 </tr>
                 </thead>
@@ -24,6 +25,7 @@
                 @foreach($fabricacao as $fabri)
                 <tr>
                     <th>{{$fabri->name}}</th>
+                    <th>{{$fabri->marca}}</th>
                     <td>{{$fabri->chassi}}</td>
                 </tr>
             @endforeach

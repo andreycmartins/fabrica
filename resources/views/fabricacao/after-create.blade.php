@@ -11,7 +11,7 @@
 
 @section('conteudo')
 
-    <h1 class="text-center">Carro criado</h1>
+    <h1 class="text-center">Carro criado</h1><br>
     <div class="d-flex justify-content-center">
         <ul class="list-group">
             <li class="list-group-item active text-center">Nome: {{$fabricacao->name}}</li>
